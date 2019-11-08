@@ -1,0 +1,39 @@
+.language-wpglobus {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  .fa-angle-down {
+    position: absolute;
+    top: 20px;
+    right: -20px;
+  }
+
+  .select {
+    width: 120px;
+    height: 60px;
+  }
+
+  .dropdown-styled {
+    height: 80px;
+
+    & > ul {
+      background: none;
+      position: relative;
+      transition: all 0.3s ease 0s;
+      opacity: 1;
+      top: 0;
+      right: 0;
+      text-align: center;
+      border: none;
+      z-index: 10;
+      & > li {
+        & > a {
+          background: transparent;
+        }
+      }
+    }
+  }
+
+
+}
