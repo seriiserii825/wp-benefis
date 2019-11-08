@@ -3,13 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Benefisshop</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<?php wp_head(); ?>
-    <!-- Favicon
-============================================ -->
-    <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
 
     <!-- google font CSS
  ============================================ -->
@@ -19,9 +14,10 @@
 
     <script src="<?php echo get_template_directory_uri() ?>/js/vendor/modernizr-2.8.3.min.js"></script>
 
+	<?php wp_head(); ?>
 </head>
 
-<body>
+<body <?php body_class(); ?> data-language="<?php echo get_lang(); ?>">
 <!--[if lt IE 8]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please
     <a href="http://browsehappy.com/">upgrade your browser
@@ -36,7 +32,7 @@
     <div class="header-top">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-5 col-sm-6 col-xs-12">
+                <div class="col-md-7 col-sm-6 col-xs-12">
                     <div class="single-drop">
                         <nav>
                             <ul>
@@ -45,7 +41,7 @@
                                     </label>
                                 </li>
                                 <li>
-                                    <label><i class="fa fa-cog"></i><?php echo esc_html__('Валюта', 'benefis'); ?>:
+                                    <label><i class="fa fa-cog"></i><?php echo carbon_get_theme_option('crb_valulte'.get_lang()); ?>:
                                     </label>
                                     <span class="currenty"><?php echo do_shortcode('[woocommerce_currency_switcher_drop_down_box]'); ?></span>
                                 </li>
@@ -65,7 +61,7 @@
                         </nav>
                     </div>
                 </div>
-                <div class="col-md-7 col-sm-6 col-xs-12">
+                <div class="col-md-5 col-sm-6 col-xs-12">
                     <ul class="social_list">
                         <li>
                             <a target="_blank" href="https://www.pinterest.com/president2439/">
@@ -113,18 +109,26 @@
             <div class="row">
                 <div class="col-md-3 col-sm-3 col-xs-12">
                     <div class="logo-area">
-                        <a href="/">
-                            <img src="http://benefis.myihor.ru/images/template/logo.png" alt=""/>
-                        </a>
+                        <?php the_custom_logo(); ?>
                     </div>
                 </div>
                 <div class="col-lg-7 col-md-6 col-sm-9 col-xs-12">
                     <div class="block-header">
-                        <div class="phone"><i class="fa fa-phone"></i>+373 (22) 213-256</div>
-                        <div class="phone"><i class="fa fa-phone"></i>+373 (22) 229-710</div>
+                        <?php $phone_1 = carbon_get_theme_option('crb_phone_1'); ?>
+	                    <?php $phone_2 = carbon_get_theme_option('crb_phone_2'); ?>
+	                    <?php $phone_3 = carbon_get_theme_option('crb_phone_3'); ?>
+                        <?php $phone_clear_1 = clear_phone($phone_1); ?>
+	                    <?php $phone_clear_2 = clear_phone($phone_2); ?>
+	                    <?php $phone_clear_3 = clear_phone($phone_3); ?>
+
+                        <a href="tel:<?php echo $phone_clear_1; ?>" class="phone"><i class="fa fa-phone"></i><?php echo $phone_1; ?></a>
+                        <a href="tel:<?php echo $phone_clear_2; ?>" class="phone"><i class="fa fa-phone"></i><?php echo $phone_2; ?></a>
+                        <a href="tel:<?php echo $phone_clear_3; ?>" class="phone"><i class="fa fa-phone"></i><?php echo $phone_3; ?></a>
+
                         <div class="email">
-                            <a href="mailto:benefisshop.com"><i class="fa fa-envelope-o"></i>support@
-                                <span>benefisshop.com</span>
+                            <a href="mailto:benefisshop.com">
+                                <i class="fa fa-envelope-o"></i>
+                                <a href="mailto:<?php echo carbon_get_theme_option('crb_mail'); ?>"><?php echo carbon_get_theme_option('crb_mail'); ?></a>
                             </a>
                         </div>
                     </div>
@@ -133,11 +137,6 @@
                             <?php if(!dynamic_sidebar('sidebar-search')): ?>
                                 <h1>Место для виджета поиска</h1>
                             <?php endif; ?>
-
-<!--                            <form action="#">-->
-<!--                                <input type="text" class="form-control input-sm" maxlength="64" name="s" placeholder="Введите поисковой запрос...">-->
-<!--                                <button type="submit">Поиск</button>-->
-<!--                            </form>-->
                         </div>
                     </div>
                 </div>
@@ -155,11 +154,11 @@
 						?>
                         <a href="<?php echo $cart_url; ?>">
                             <span>
-                               <?php echo esc_html__('Basket', 'benefis'); ?> (<?php echo WC()->cart->get_cart_contents_count(); ?>)
+                               <?php echo carbon_get_theme_option('crb_basket'.get_lang()); ?> (<?php echo WC()->cart->get_cart_contents_count(); ?>)
                             </span>
                         </a>
                         <div class="restrain small-cart-content">
-                            <p class="total"> <?php echo esc_html__('Sum', 'benefis'); ?>:
+                            <p class="total"> <?php echo carbon_get_theme_option('crb_summ'.get_lang()); ?>:
                                 <span class="amount">155 mdl</span>
                             </p>
                             <p class="buttons">

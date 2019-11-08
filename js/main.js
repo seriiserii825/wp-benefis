@@ -236,5 +236,20 @@ jQuery( document ).ready(function( $ ) {
             }, 400);
         });
     };
-    wpgisGallery();
+    // wpgisGallery();
+
+    let changeSearchWidgetLang = function () {
+        let searchInput = $('input[type="search"]');
+        let searchBtn = $('.search-box button[type="submit"]');
+        let siteLang = $('body').attr('data-language');
+        if(siteLang == '_ro'){
+            searchInput.attr('placeholder', 'Cautarea produselor...');
+            searchBtn.text('Cauta');
+        }
+        if(siteLang == '_en'){
+            searchInput.attr('placeholder', 'Find a product...');
+            searchBtn.text('Search');
+        }
+    };
+    changeSearchWidgetLang();
 });

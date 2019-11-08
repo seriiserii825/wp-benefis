@@ -18,7 +18,6 @@
 	if (!defined('ABSPATH')) {
 		exit; // Exit if accessed directly
 	}
-
 	get_header(); ?>
 
 <?php //require_once __DIR__ . '/../template-parts/content-slider.php'; ?>
@@ -51,7 +50,5 @@
 			?>
         </div>
     </div>
+<?php get_footer(); ?>
 
-<?php get_footer('shop');
-
-/* Omit closing PHP tag at the end of PHP files to avoid "headers already sent" issues. */
