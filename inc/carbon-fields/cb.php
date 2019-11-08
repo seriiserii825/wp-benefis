@@ -36,14 +36,36 @@
 			));
 		
 		// Add second options page under 'Basic Options'
+		// Add second options page under 'Basic Options'
 		Container::make('theme_options', 'Strings')
 			->set_page_parent($basic_options_container)// reference to a top level container
 			->add_fields(array(
-				Field::make('text', 'crb_valulte_ru', __('Valute ru'))
+				Field::make('text', 'crb_valulte_en', __('Valute en'))
 					->set_width(30),
 				Field::make('text', 'crb_valulte_ro', __('Valute ro'))
 					->set_width(30),
-				Field::make('text', 'crb_valulte_en', __('Valute en'))
+				Field::make('text', 'crb_valulte_ru', __('Valute ru'))
+					->set_width(30),
+
+				Field::make('text', 'crb_basket_ru', __('Basket ru'))
+					->set_width(30),
+				Field::make('text', 'crb_basket_ro', __('Basket ro'))
+					->set_width(30),
+				Field::make('text', 'crb_basket_en', __('Basket en'))
+					->set_width(30),
+
+				Field::make('text', 'crb_summ_ru', __('Summ ru'))
+					->set_width(30),
+				Field::make('text', 'crb_summ_ro', __('Summ ro'))
+					->set_width(30),
+				Field::make('text', 'crb_summ_en', __('Summ en'))
+					->set_width(30),
+
+				Field::make('text', 'crb_to_cart_ro', __('crb_to_cart_ro'))
+					->set_width(30),
+				Field::make('text', 'crb_to_cart_ru', __('crb_to_cart_ru'))
+					->set_width(30),
+				Field::make('text', 'crb_to_cart_en', __('crb_to_cart_en'))
 					->set_width(30),
 			));
 	}

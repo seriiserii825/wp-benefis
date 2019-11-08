@@ -120,11 +120,21 @@
                 </div>
                 <div class="col-lg-7 col-md-6 col-sm-9 col-xs-12">
                     <div class="block-header">
-                        <div class="phone"><i class="fa fa-phone"></i>+373 (22) 213-256</div>
-                        <div class="phone"><i class="fa fa-phone"></i>+373 (22) 229-710</div>
+	                    <?php $phone_1 = carbon_get_theme_option('crb_phone_1'); ?>
+	                    <?php $phone_2 = carbon_get_theme_option('crb_phone_2'); ?>
+	                    <?php $phone_3 = carbon_get_theme_option('crb_phone_3'); ?>
+	                    <?php $phone_clear_1 = clear_phone($phone_1); ?>
+	                    <?php $phone_clear_2 = clear_phone($phone_2); ?>
+	                    <?php $phone_clear_3 = clear_phone($phone_3); ?>
+
+                        <a href="tel:<?php echo $phone_clear_1; ?>" class="phone"><i class="fa fa-phone"></i><?php echo $phone_1; ?></a>
+                        <a href="tel:<?php echo $phone_clear_2; ?>" class="phone"><i class="fa fa-phone"></i><?php echo $phone_2; ?></a>
+                        <a href="tel:<?php echo $phone_clear_3; ?>" class="phone"><i class="fa fa-phone"></i><?php echo $phone_3; ?></a>
+
                         <div class="email">
-                            <a href="mailto:benefisshop.com"><i class="fa fa-envelope-o"></i>support@
-                                <span>benefisshop.com</span>
+                            <a href="mailto:benefisshop.com">
+                                <i class="fa fa-envelope-o"></i>
+                                <a href="mailto:<?php echo carbon_get_theme_option('crb_mail'); ?>"><?php echo carbon_get_theme_option('crb_mail'); ?></a>
                             </a>
                         </div>
                     </div>
