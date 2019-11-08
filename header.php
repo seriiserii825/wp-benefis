@@ -146,11 +146,11 @@
 						<?php
 							$cart_url = '';
 							if (get_lang() === '_en') {
-								$cart_url = 'http://benefis-wp.myihor.ru/en/cart/';
+								$cart_url = home_url(). '/en/cart/';
 							} elseif (get_lang() === '_ru') {
-								$cart_url = 'http://benefis-wp.myihor.ru/ru/cart/';
+								$cart_url = home_url(). '/ru/cart/';
 							} else {
-								$cart_url = 'http://benefis-wp.myihor.ru/cart/';
+								$cart_url = home_url(). '/cart/';
 							}
 						?>
                         <a href="<?php echo $cart_url; ?>">
